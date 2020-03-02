@@ -1,8 +1,14 @@
 # cloudinary
 Gallery Photo App tramite il servizio Cloudinary (v1: Backend)
-In futuro ci sara la versione completo Frontend (Reactjs) + Backend ( Nodejs, Express, MongoDB, Handlebars)
+Progetto online: https://cloudinaryjs.herokuapp.com/
 
-Ha bisogno delle variabili d'ambiente *.env*
+In futuro ci sara la versione completa:
+- Backend ( Nodejs, Express, MongoDB, Handlebars)
+- Frontend (Reactjs)
+- ...senza handlebars...
+
+Ha bisogno di:
+- variabili d'ambiente *.env*
 
 Caricamento: Heroku + Atlas Mongo DB
 
