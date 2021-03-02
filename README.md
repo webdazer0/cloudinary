@@ -1,6 +1,8 @@
 # cloudinary
 Gallery Photo App tramite il servizio Cloudinary (v1: Backend)
 
+![](https://github.com/webdazer0/cloudinary/blob/master/screenshot.jpg)
+
 Progetto online: https://cloudinaryjs.herokuapp.com/
 
 In futuro ci sara la versione completa:
