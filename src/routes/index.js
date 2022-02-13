@@ -13,12 +13,13 @@ const fs = require('fs-extra');
 
 router.get('/', async (req, res) => {
     // res.send({ hakuna: 'matata' })
-    const photos = await Photo.find();
+    const photos = await Photo.find().lean();
     res.render('images', {photos});    
+    // res.json({photos});    
 });
 
 router.get('/images/add', async (req, res) => {
-    const photos = await Photo.find();
+    const photos = await Photo.find().lean();
     res.render('imageform', {photos});  
 });
 
@@ -39,9 +40,9 @@ router.post('/images/add', async (req, res) => {
     res.redirect('/');
 });
 
-router.get('/images/delete/:yenka', async (req, res) => {
-    const { yenka } = req.params;
-    const photo = await Photo.findByIdAndDelete(yenka);
+router.get('/images/delete/:id', async (req, res) => {
+    const { id } = req.params;
+    const photo = await Photo.findByIdAndDelete(id);
     const result = await cloudinary.v2.uploader.destroy(photo.public_id);
     console.log(result);    
     res.redirect('/images/add');
