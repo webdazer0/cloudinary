@@ -1,4 +1,5 @@
 # Cloudinary
+![Heroku](https://pyheroku-badge.herokuapp.com/?app=cloudinaryjs&style=flat)
 
 Gallery Photo App tramite il servizio Cloudinary (v1: Backend)
 
