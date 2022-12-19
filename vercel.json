@@ -3,14 +3,26 @@
     "installCommand": "npm install",
     "builds": [
         {
-            "src": "./index.js",
+            "src": "index.js",
             "use": "@vercel/node"
+        },
+        {
+            "src": "src/public/uploads/**",
+            "use": "@vercel/static",
+            "config": { "includeFiles": ["src/public/uploads/**"] }
         }
     ],
     "routes": [
+        { 
+            "handle": "filesystem" 
+        },
         {
             "src": "/(.*)",
             "dest": "/"
+        },
+        {
+            "src": "/(.+)",
+            "dest": "src/public/uploads/$1"
         }
     ]
   }

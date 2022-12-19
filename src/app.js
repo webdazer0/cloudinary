@@ -9,6 +9,8 @@ import photoRoutes from "./routes/photo.routes.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+console.log("__dirname =>", __dirname);
+
 // Init
 const app = express();
 import "./database.js";
