@@ -1,8 +1,8 @@
-if(process.env.NODE_ENV !== 'production') { require('dotenv').config(); }
+import app from "./app.js";
 
-const app = require('./app');
+const port = app.get("port");
 
-app.listen(app.get('port'), () => {
-    console.log('Server on port:', app.get('port'));
-    console.log('Environment:', process.env.NODE_ENV);
+app.listen(app.get("port"), () => {
+  console.log("Server on port:", port);
+  console.log("Environment:", process.env.NODE_ENV);
 });

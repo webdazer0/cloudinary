@@ -1,12 +1,9 @@
-const Photo = require("../models/Photo");
-const fs = require("fs-extra");
-const cloudinary = require("cloudinary");
+import fs from "fs-extra";
+import cloudinary from "cloudinary";
+import Photo from "../models/Photo.js";
+import { cloudinaryConfig } from "../config.js";
 
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
-});
+cloudinary.config(cloudinaryConfig);
 
 const getAll = async (req, res) => {
   const photos = await Photo.find().lean();
@@ -43,4 +40,4 @@ const deleteById = async (req, res, next) => {
   next();
 };
 
-module.exports = { getAll, getAllForm, create, deleteById };
+export default { getAll, getAllForm, create, deleteById };

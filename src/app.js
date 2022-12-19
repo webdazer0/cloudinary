@@ -1,13 +1,17 @@
-const express = require("express");
-const multer = require("multer");
-const morgan = require("morgan");
-const path = require("path");
-const exphbs = require("express-handlebars");
-const photoRoutes = require("./routes/photo.routes");
+import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
+//
+import multer from "multer";
+import morgan from "morgan";
+import exphbs from "express-handlebars";
+import photoRoutes from "./routes/photo.routes.js";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Init
 const app = express();
-require("./database");
+import "./database.js";
 
 // Settings
 app.set("port", process.env.PORT || 3000);
@@ -16,8 +20,8 @@ app.engine(
   ".hbs",
   exphbs.engine({
     defaultLayout: "main",
-    layoutsDir: path.join(app.get("views"), "layouts"),
-    partialsDir: path.join(app.get("views"), "partials"),
+    layoutsDir: path.join(app.get("views"), "layouts"), // /views/layouts
+    partialsDir: path.join(app.get("views"), "partials"), // /views/partials
     extname: ".hbs",
   })
 );
@@ -38,4 +42,4 @@ app.use(multer({ storage }).single("image"));
 // Routes
 app.use(photoRoutes);
 
-module.exports = app;
+export default app;

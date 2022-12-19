@@ -1,7 +1,7 @@
-const { Router } = require("express");
+import { Router } from "express";
 const router = Router();
 
-const photoController = require("../controller/photo.controller");
+import photoController from "../controller/photo.controller.js";
 
 router.route("/").get(photoController.getAll);
 
@@ -14,4 +14,4 @@ router
   .route("/images/delete/:id")
   .get(photoController.deleteById, (req, res) => res.redirect("/"));
 
-module.exports = router;
+export default router;
