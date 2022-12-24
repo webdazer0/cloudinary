@@ -1,9 +1,8 @@
 # Cloudinary
-![Heroku](https://pyheroku-badge.herokuapp.com/?app=cloudinaryjs&style=flat)
 
 Gallery Photo App tramite il servizio Cloudinary (v1: Backend)
 
-**Progetto online: https://cloudinaryjs.herokuapp.com/**
+**Progetto online: https://cloudinaryjs.up.railway.app/**
 
 ![](https://github.com/webdazer0/cloudinary/blob/master/screenshot.jpg)
 
@@ -19,4 +18,4 @@ Ha bisogno di:
 
 Caricamento: Heroku + Atlas Mongo DB
 
-Progetto online: https://cloudinaryjs.herokuapp.com/
+Progetto online: https://cloudinaryjs.up.railway.app/
