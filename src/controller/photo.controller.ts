@@ -33,7 +33,7 @@ const create = async (req: Request, res: Response, next: NextFunction): Promise<
 
     if (!req.file) throw Error('You must upload a image file to create a Book');
 
-    const { path } = req.file!;
+    const { path } = req.file;
     const result = await imageService.uploadImage(path);
     const photoData = {
       title,
@@ -60,7 +60,7 @@ const deleteById = async (req: Request, res: Response, next: NextFunction): Prom
     const { id } = req.params;
     const photo = await Photo.findByIdAndDelete(id);
 
-    const photoId = photo?.public_id!;
+    const photoId = photo?.public_id;
     const result = await imageService.deleteImage(photoId);
     console.log(result);
     next();

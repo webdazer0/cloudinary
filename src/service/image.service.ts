@@ -7,7 +7,8 @@ const uploadImage = (path: string) => {
     return cloudinary.uploader.upload(path);
 }
 
-const deleteImage = (id: string) => {
+const deleteImage = (id?: string) => {
+    if (!id) return;
     return cloudinary.uploader.destroy(id);
 }
 
