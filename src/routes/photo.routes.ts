@@ -1,7 +1,7 @@
 import { Router } from "express";
 const router = Router();
 
-import photoController from "../controller/photo.controller.js";
+import photoController from "../controller/photo.controller";
 
 router.route("/").get(photoController.getAll);
 
